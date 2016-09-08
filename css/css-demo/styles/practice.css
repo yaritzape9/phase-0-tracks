@@ -7,9 +7,33 @@
 	padding: 10px 10px;
 	margin-top:10px;
 	margin-bottom:10px;
-	
+
+}
+
+
+ul > li {
+	color: red;
+}
+
+ol > li {
+	color: blue;
 }
 
 li{
 font-size:.8em;
 }
+
+
+/* intentional conflict for h3 */
+h3{
+	color: blue;
+}
+
+h3:hover {
+	color: violet;
+	border-top: 5x solid black
+}
+
+
+h3{
+	color: orange;
