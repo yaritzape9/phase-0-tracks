@@ -1,0 +1,29 @@
+.container {
+    position: relative;
+
+}
+
+
+.imageOne{/*hat*/
+    display: block;
+    margin: auto;
+    width: 40%;	 
+    z-index: 1;
+    margin-top: -100px;
+}
+
+.imageTwo {/*glasses*/
+    display: block;
+    margin: auto;
+    width: 40%; 
+     z-index: 1;
+    margin-top: -100px;
+}
+
+
+.imageThree {
+	display: block;
+    margin: auto;
+    width: 40%; 
+    
+}
