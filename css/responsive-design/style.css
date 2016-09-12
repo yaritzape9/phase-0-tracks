@@ -1,17 +1,36 @@
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
-  margin-left: 0px;
+  margin-left: 0px; 
 }
+
+body { 
+  fluid-width: 960px;
+  min-width: 150px;
+  margin: auto;
+  display: block;
+}
+
+main { 
+  fluid width: 756px;
+  min-width: 150px;
+  display: inline-block;
+  float: right;
+  vertical-align: top; 
+ }
 
 cite {
   display: block;
   margin-top: 10px;
 }
 
+
 #external-links ul {
+  vertical-align: top; 
   list-style-type: none;
   padding-left: 0px;
+  fluid width: 20%;
+  min-width: 150px;
 }
 
 /* you're welcome to edit the
@@ -29,4 +48,27 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+@media screen and (max-width: 200px) { 
+   p { 
+    font-size: 20px;
+   }
+}
+
+@media screen and (max-width: 200px){
+  body { 
+    width: 100%;
+   }
+  main { 
+    display:block;
+    width:100%;
+   }
+
 }
