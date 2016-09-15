@@ -1,10 +1,7 @@
-#What is your name? Some known vampires are in the area, and we can check against the Werewolf Intelligence Bureau database for their aliases.
-#How old are you? What year were you born? This is to try to trick the vampire, who is likely several hundreds of years old. If an employee gives an age and a year of birth that don’t line up mathematically, that employee might be a vampire.
-#our company cafeteria serves garlic bread. Should we order some for you? Vampires hate garlic. Do not even get a vampire started on garlic. Invite a vampire to an Italian restaurant even one time, and you’ll never hear the end of it.
-#Would you like to enroll in the company’s health insurance? Vampires are immortal, so they certainly don’t need health insurance.
 
-
-puts "Hi possible future employee!"
+puts "Hi possible future employee(s)!"
+puts "how many employees will be processed"
+until employees = 0 
 puts "What is your name?"
 	name = gets.chomp
 puts "How old are you? What year were you born?"
@@ -48,3 +45,19 @@ elsif age && (bread || insurance)
 else 
 	secret_info_for_boss = "Results inconclusive."
 end
+
+if secret_info_for_boss = "Definitely a vampire."
+	puts "THEY ARE A VAMPIRE GET THEM OUT BOSS"
+elsif secret_info_for_boss = "Almost certainly a vampire."
+	puts "Im not 100percent positive  boss but I'M 99.99percent SURE they're a vampire"
+elsif secret_info_for_boss = "Probably a vampire."
+	puts "They are probably vampire but im not that certain!"
+elsif secret_info_for_boss = "Probably not a vampire."
+	puts "Ehhh I don't see them being a vampire boss."
+else secret_info_for_boss = "Results inconclusive."
+	puts "Uhhhh I'm not to sure because the answers were everywhere sooo yea I don't know boss"
+end
+
+
+
+
