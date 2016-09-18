@@ -1,4 +1,4 @@
-
+#names: Yaritza Perez and Michael Silberstein
 #Encrypt
 #1.) start a certain index (that is 0)
 #2.)everytime your method advances, the index of the current letter will change by adding one to its value
