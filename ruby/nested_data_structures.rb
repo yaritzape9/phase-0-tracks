@@ -51,8 +51,7 @@ school_desks = {
     }
 }
     
-  puts school_desks[:bobs_desk][:books][0]
-
+#puts school_desks[:bobs_desk][:books][0]
 #puts school_desks[:jans_desk][:pens]
 #puts school_desks
 #puts school_desks[:bobs_desk][:pens][0]
