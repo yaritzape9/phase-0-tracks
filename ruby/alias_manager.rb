@@ -1,3 +1,12 @@
+# pseudo code
+# first off  we want to say hi to the user and ask them questions
+# second off we want to take this and figure out how to go through the string and only change the vowels with a method
+# third we want to come up with a method that goes through the string agai but changes the consonant
+# 4th we want to build our data structure
+# 5th we add in the correct syntax to adding more into the data structure
+# 6th we firgure out how to make the string an array and flip the two indexes so the first and last name is switched.
+# lastly call the method to try it out
+#trying to make everything into one method
 def vowel(string)
 	 puts "Hello please enter your first and last name!"
  puts "We will have your alter ego name ina jiffy"
@@ -38,16 +47,34 @@ def vowel(string)
 	  p string
 	end
 
-	alter_name = string.split.each_slice(1).map{|a|a.join ' '}
+#data structure
+fake_name = {
+    secretagent_one: {
+        full__realname: 'Felicia torrez',
+        fake_name: 'Vussit Gimodoe'
+    }
+
+puts "well thanks for using our program, "
+input = gets.chomp
+if input == ''
+	 fake_name[secretagent][full__realname] = name.to_sym
+ 	 fake_name[secretagent][full__realname]= altername.to_sym
+end
+
+ alter_name = string.split.each_slice(1).map{|a|a.join ' '}
  puts alter_name.reverse
-	
+
 end
 
 vowel("felicia torrez")
 
+
+#everything individually
 # 	 puts "Hello please enter your first and last name!"
 #  puts "We will have your alter ego name ina jiffy"
 #  name = gets.chomp
+
+
 
 # def vowel(string)
 #   index = 0 
@@ -91,5 +118,25 @@ vowel("felicia torrez")
 # => p string
 #	end
 
- 
+
+#       data structure
+# fake_name = {
+#     secretagent_one: {
+#         full__realname: 'Felicia torrez',
+#         fake_name: 'Vussit Gimodoe'
+#     }
+    
+# puts "well thanks for using our program, "
+# input = gets.chomp
+# if input == ''
+# 	 fake_name[secretagent][full__realname] = name.to_sym
+#  	 fake_name[secretagent][full__realname]= altername.to_sym
+# end
+
+
+# 	alter_name = string.split.each_slice(1).map{|a|a.join ' '}
+#  puts alter_name.reverse
+#  fake_name[secretagent][full__realname] = name.to_sym
+#  fake_name[secretagent][full__realname]= altername.to_sym
+
 
