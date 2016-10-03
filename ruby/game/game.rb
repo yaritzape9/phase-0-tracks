@@ -23,15 +23,13 @@ class GuessingGame
     @secret_word = secret_word
    end
    
-   def check_word(secret_word)
-    @guess_count += 1
-      # if @s[index] == "ball"
-      #   @is_over = true
-      # else
-      #   false
-      #end
-    end
-end
+  def letter_guess(guess)
+    @tries = guess 
+    if !@guesses.include?(guess)
+    @guesses << guess
+    @tries_of_guesses -= 1
+    end   
+  end
 
  
 # user interface
