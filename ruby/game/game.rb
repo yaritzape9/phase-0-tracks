@@ -1,4 +1,3 @@
-
 # class guessinggame
   #UI
     #   puts the welcome message to the user
@@ -15,16 +14,17 @@
     #have a determain game method which will tell you if you win or lose and also limits the amount of guesses you have
 #maybe looking at some hangman games??
 #google similiar games
-
 class GuessingGame
   attr_reader :secret_word, :is_over, :guesses, :word_array,:hidden_word, :tries_of_guesses
-  
-  def initialize
+  def initialize(secret_word)
     @secret_word = secret_word
     @is_over = false
     @guesses = []
-   @tries_of_guesses = @word_array.length
-   end
+    @word_array = @secret_word.split("")
+    @tries_of_guesses = @word_array.length
+    @hidden_word = "-" * @word_array.length
+    @correct_array = []
+  end
 
   def letter_guess(guess)
     @tries = guess 
@@ -34,7 +34,7 @@ class GuessingGame
     end   
   end
 
-    def word_hider(guess)
+  def word_hider(guess)
     new_hidden_word = []
     @word_array.each do |letter|
       if letter == @tries
@@ -52,8 +52,22 @@ class GuessingGame
     p new_hidden_word.join
   end
 
- 
-# user interface
+  def determain_game
+    if @hidden_word == @secret_word
+      puts"You guessed #{@secret_word}!!Great job! You know your stuff"
+      @is_over = true
+      puts "You won in #{guesses.count} guesses!"
+    elsif @tries_of_guesses == 0
+      puts "The word was #{@secret_word}? You couldn't guess it! Better luck next time"
+      @is_over = true
+      puts "You lost in #{sguesses.count} guesses!"
+    else
+      @is_over = false
+    end
+  end
+end
+
+
 puts "Welcome to the Guess the word Game!"
 puts "What word would you like your oppnent to guess??"
 secret_word = gets.chomp.downcase
@@ -67,3 +81,5 @@ while !game.is_over
   game.word_hider(guess)
   game.determain_game
 end
+
+
