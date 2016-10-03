@@ -30,22 +30,36 @@ class GuessingGame
     end   
   end
 
+    def word_hider(guess)
+    new_hidden_word = []
+    @word_array.each do |letter|
+      if letter == @tries
+        @correct_array << letter 
+        new_hidden_word << letter
+      elsif @correct_array.include?(letter)
+        new_hidden_word << letter
+      else
+        new_hidden_word << "-"
+      end
+    end
+#   @hidden_word = new_hidden_word
+#   p new_hidden_word
+      @hidden_word = new_hidden_word.join
+    p new_hidden_word.join
+  end
+
  
 # user interface
-
 puts "Welcome to the Guess the word Game!"
-
 puts "What word would you like your oppnent to guess??"
- secret_word = gets.chomp.downcase
- game = GuessingGame.new(secret_word)
-
-
+secret_word = gets.chomp.downcase
+game = GuessingGame.new(secret_word)
+puts "Your word has this many letters. That is also the amount of tries you get! So guess carefully"
+puts "#{game.hidden_word}"
 while !game.is_over
-  puts "Please guess a letter"
-  guess = gets.chomp.to_i
-  if !game.check_word(guess - 1)
-    puts "Nope! Try again."
-  end
+  puts "Guess a letter."
+  guess = gets.chomp
+  game.letter_guess(guess)
+  game.word_hider(guess)
+  game.determain_game
 end
-
-puts "You won in #{game.guess_count} guesses!"
