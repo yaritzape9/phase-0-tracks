@@ -11,7 +11,11 @@
     #have a guess method that checks if the letter you guessed is correct
     #Have a hidden word method that hides the word 
       #   the user will get feedback of there guesses in the example of ---- which will fill in the gaps if the answer a correct letter.
+      #need new empty array and you have to loop through it and fill in the letter
     #have a determain game method which will tell you if you win or lose and also limits the amount of guesses you have
+#maybe looking at some hangman games??
+#google similiar games
+
 class GuessingGame
   attr_reader :secret_word, :is_over, :guesses, :word_array,:hidden_word, :tries_of_guesses
   
