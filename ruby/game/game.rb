@@ -60,7 +60,7 @@ class GuessingGame
     elsif @tries_of_guesses == 0
       puts "The word was #{@secret_word}? You couldn't guess it! Better luck next time"
       @is_over = true
-      puts "You lost in #{sguesses.count} guesses!"
+      puts "You lost in #{guesses.count} guesses!"
     else
       @is_over = false
     end
