@@ -13,16 +13,15 @@
       #   the user will get feedback of there guesses in the example of ---- which will fill in the gaps if the answer a correct letter.
     #have a determain game method which will tell you if you win or lose and also limits the amount of guesses you have
 class GuessingGame
-  attr_reader :guess_count
-  attr_reader :is_over
-  attr_reader :secret_word
+  attr_reader :secret_word, :is_over, :guesses, :word_array,:hidden_word, :tries_of_guesses
   
   def initialize
-    @guess_count = 0
-    @is_over = false
     @secret_word = secret_word
+    @is_over = false
+    @guesses = []
+   @tries_of_guesses = @word_array.length
    end
-   
+
   def letter_guess(guess)
     @tries = guess 
     if !@guesses.include?(guess)
