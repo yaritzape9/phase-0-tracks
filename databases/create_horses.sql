@@ -1,0 +1,11 @@
+-- CREATE TABLE horses (
+-- 	name VARCHAR(255),
+-- 	age INT, 
+-- 	gender VARCHAR(255), 
+-- 	breedable BOOLEAN
+-- );
+
+-- INSERT INTO horses (name, age, gender, breedable) VALUES ("Prancer", 3, "Male", "true");
+-- INSERT INTO horses (name, age, gender, breedable) VALUES ("Maximus", 6, "Male", "true");
+-- INSERT INTO horses (name, age, gender, breedable) VALUES ("Betty", 9, "Female", "false");
+-- INSERT INTO horses (name, age, gender, breedable) VALUES ("Bolt", 12, "Male", "true");
