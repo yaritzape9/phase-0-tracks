@@ -1,46 +1,45 @@
-
-# first promt the user with the questions
-# then create a hash
-#have that hash have the infoin it link to user input
-#ask for more info
-#make a loop to add more info or they can type done when finished 
-
-puts "What's is your name"
-	name = gets.chomp
-puts "What's your age"
-	age = gets.chomp.to_i
-puts "Where do you live?"
-	location = gets.chomp
-puts "Whats your phone number?"
-	phone_number = gets.chomp
-puts "Where do you plan to vacation?"
-	vacation= gets.chomp
-	
-	
-info_clients = {
-	name: name,
-	age: age,
-	location: location,
-	phone_number: phone_number,
-	vacation: vacation
-}
-	
-puts info_clients
-
-puts "Would you like to continue(update or add info), if not type in 'done'"
+#pseudocode
+#Plan you next vacation 
+#My program will prompt the user for their name,age, phone number, and where they prefer hot or cold weather
+# I will then create an empty hash
+#convert user data to apropriate data type
+#store into hash
+#ask user to review 
+#then allow for an update, so ask if they would like to update anything
+#if the user says none then quit the loop and they are done
+#print latest version of hash , exit, then wish them a nice day
 
 
-puts "Would you like to continue(update or add info) press any key(or write yes, if not type in 'done'"
-input = gets.chomp
+puts "Hello welcome to the vacation planner"
+puts "are you excited to go on a adventure?"
+puts "Please state your name"
+name = gets.chomp
+puts "What is your age?"
+age = gets.to_i
+puts "Give us your number"
+number = gets.to_i
+puts "Do you perfer hot weather?(true, false)"
+weather = gets.chomp
 
-while input != "done"
+vaca_hash = {
+	name: name, 
+	age: age, 
+	number: number,
+	weather: weather }
 
-	puts "What type of info is it?:"
-	type_info = gets.chomp.to_sym
-	puts "Please type in the actual information"
-	information = gets.chomp
-	info_clients[type_info] = information
-	puts info_clients
-	puts "Click on any key to continue adding or type in 'done' when you finish"
-	input = gets.chomp
-end
+	p vaca_hash
+
+	puts "Would you like to update(yes or none)?"
+	continue = gets.chomp
+
+		if continue == "none"
+		else
+			puts "please give me the name of the info you would like to update"
+			info = gets.chomp
+			update = info.to_sym
+			puts "now what would you like to change #{info} to"
+			change = gets.chomp
+
+			vaca_hash[update] = change
+		end
+		p vaca_hash
