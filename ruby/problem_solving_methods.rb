@@ -1,29 +1,28 @@
-def search_array(array, int)
+def search_array(array, integer)
 index = 0
 	while index < array.length
-			if array[index] == int
+			if array[index] == integer
 				p index
 			end
 		index += 1
 	end
 end
 arr = [42, 89, 23, 1]
-search_array(arr, 42)
+search_array(arr, 89)
 
-
-def fib(num)
-	arr_fib = [0]
-	x = 0
-	y = 1
-	before_x = nil
-		(num -1).times do ||
-			before_x = x 
-			x = y
-			y = before_x + y
-			puts x
-			arr_fib.push(x)
-		end
-	puts arr_fib
+def fib(n)
+ arr = [0, 1, 1]
+  fib_index = 3
+  a, b = 1, 1
+ 
+  while fib_index < n
+    c = a + b
+    a = b
+    b = c
+    fib_index += 1
+    arr.push(c)
+  end
+  p arr
 end
 fib(6)
 
@@ -35,25 +34,25 @@ fib(6)
 
 #4.)psuedo code
 #first start by taking in an array of ints
-#second start off with an index of zero 
+#second start off with the legnth of the array 
 #then creat a loop for the method to run through the whole array
-#then reorder numbers and you get your new array
+#then reorder numbers in your array
 
-def bubble_sort(array)
-	x = 0
-	 while x < array.length
-	 	i = x +1
-	 	while i < array.length
-	 		if array[i]< array[x]
-	 			sorting = array[x]
-	 			array[x] = array [i]
-	 			array[i] = sorting
-	 		end
-	 		i += 1
-	 	end
-	 x += 1
+
+def bubsort(array)
+  length_of_arr = array.length
+
+  loop do
+  	swapped = false
+	  (length_of_arr - 1).times do |i|
+	  	if array[i] > array[i+1]
+	  		array[i], array[i+1] = array[i+1], array[i] 
+	  		swapped = true
+	  	end
+	  end
+  	break if not swapped
 	end
-	p array
+array
 end
-arr = [3,1,2]
-bubble_sort(arr)
+a = [1,7,4,9,2,0,4]
+p bubsort(a)
