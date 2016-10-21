@@ -1,70 +1,79 @@
-class Puppy
+# class Puppy
 
-  def fetch(toy)
-    puts "I brought back the #{toy}!"
-    toy
+#   def initialize
+#     puts "Initializing 🐶 instance"
+#   end
+
+#   def speak(bark)
+#     "🐶 woof \n" * bark
+#       #second way
+#       # bark.times do
+#       #   puts "Woof"
+#       # end
+#   end
+
+#   def roll_over
+#     "*Roll over* 🐶 🌀"
+#   end
+
+#   def dog_years(human_yrs)
+#     dog_yrs = human_yrs * 7 
+#     "👴 years: #{dog_yrs}"
+#   end
+
+#   def highfive
+#     "Give me your paw!✋"
+#   end
+# end
+# pups = Puppy.new
+# puts pups.speak(4)
+# puts pups.roll_over
+# puts pups.dog_years(2)
+# puts pups.highfive
+
+class Gatos
+
+  def initialize
+    puts "Initializing 🐱 instance"
   end
-  
-  def speak(bark)
-    bark.times do
-      puts "woof"
+
+  def catnip(taps)
+    if taps == 3 
+      "*🐱 comes over* \n *plays with catnip*"
+    else
+      "*🐱  doesn't want to come* \n It's lazy 💤  and not to smart🤓"
     end
   end
 
-  def roll_over
-    puts "*Rolls over*"
-  end
-
-  def dog_years(years)
-    p years * 4
-  end
-
-  def sit
-    puts "*sits*"
-  end
-
-  def initialize
-    puts 'Initializing new puppy instance ...'
+  def pets 
+   "*Lays on back* \n 🐱  wants belly rubbed now"
   end
 end
-# Puppy.new.sit
-# Puppy.new.dog_years(21)
-# Puppy.new.roll_over
-# Puppy.new.speak(3)
+kitty_instances = Array.new
 
-
-class Gymnast
-  def flip
-    puts "*does flip*"
-  end
-
-  def jump
-    puts "*does jump*"
-  end
-
-  def pommelhorse
-    puts "*does rotation*"
-  end
-end
-
-fifty_shades_of_instance = Array.new
-
-Gymnast.new.flip
-Gymnast.new.jump
-Gymnast.new.pommelhorse
+puts "-----------------------"
+cat = Gatos.new
+puts "Trying to give cat catnip: "
+puts "Come here kitty kitty " + cat.catnip(3)
+puts "Trying to give cat catnip: "
+puts "Come here kitty kitty " + cat.catnip(2)
+puts "Starts to pet cat " + cat.pets
 
 index = 0
 while index < 50
-fifty_shades_of_instance[index] = Gymnast.new
-p fifty_shades_of_instance
+kitty_instances[index] = Gatos.new
+p kitty_instances
 index += 1
 end
 
-fifty_shades_of_instance.each do |grey|
-grey.jump
-grey.flip
-grey.pommelhorse
+kitty_instances.each do |cat|
+puts "-----------------------"
+puts cat.catnip(3)
+puts cat.catnip(2)
+puts cat.pets
 end
 
-end
+
+
+
 
