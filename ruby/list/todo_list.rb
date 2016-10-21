@@ -1,12 +1,12 @@
 class TodoList
 
+	def get_items
+		@list
+	end
+	
 	def initialize(list)
 		@list = list
 
-	end
-
-	def get_items
-		@list
 	end
 
 	def add_item(item)
