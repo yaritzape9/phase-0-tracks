@@ -4,11 +4,11 @@ module Shout
  #  	end
 
  # 	def self.yelling_happily(word)
-	# 	word + " *happy face*" + " :D"
+	# 	word + " :D!!!"
 	# end
 
-	def plays(game)
-		puts "plays #{game} with favorite loving dog *smiles* and *pets dog*"
+	def plays(fetch)
+		puts "plays #{fetch} with favorite dog *smiles* and *pets dog*"
 	end
 
 	def screams(words)
@@ -28,4 +28,4 @@ end
  brother =  Annoying_brother.new
  	brother.screams("YOU ARE SO ANNOYING. LEAVE ME ALONE")
  dog = Loving_dog.new
- 	dog.plays("fetch")
+ 	dog.plays("running")
