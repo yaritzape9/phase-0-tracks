@@ -15,71 +15,63 @@
 #maybe looking at some hangman games??
 #google similiar games
 class GuessingGame
-  attr_reader :secret_word, :is_over, :guesses, :word_array,:hidden_word, :tries_of_guesses
-  def initialize(secret_word)
+  attr_reader :secret_word, :guesses, :game_status
+
+  def initialize
     @secret_word = secret_word
-    @is_over = false
     @guesses = []
-    @word_array = @secret_word.split("")
-    @tries_of_guesses = @word_array.length
-    @hidden_word = "-" * @word_array.length
-    @correct_array = []
+    @hidden_word = ""
+    @guess_counter = 0
+    @game_status = false
   end
 
-  def letter_guess(guess)
-    @tries = guess 
-    if !@guesses.include?(guess)
-    @guesses << guess
-    @tries_of_guesses -= 1
-    end   
+  def masked_word(guess)
+    @secret_word = guess
+    index = 0
+    while index < @secret_word.length
+        @hidden_word << "-"
+        index += 1
+    end
+    @hidden_word
   end
 
-  def word_hider(guess)
-    new_hidden_word = []
-    @word_array.each do |letter|
-      if letter == @tries
-        @correct_array << letter 
-        new_hidden_word << letter
-      elsif @correct_array.include?(letter)
-        new_hidden_word << letter
-      else
-        new_hidden_word << "-"
+  def guess_letter(guess)
+    index = 0
+    while index < @secret_word.length
+      if @secret_word[index].include? guess
+        @hidden_word[index] = guess
       end
+      index += 1
     end
-#   @hidden_word = new_hidden_word
-#   p new_hidden_word
-      @hidden_word = new_hidden_word.join
-    p new_hidden_word.join
+    @hidden_word
   end
 
-  def determain_game
+  def determine_game
     if @hidden_word == @secret_word
-      puts"You guessed #{@secret_word}!!Great job! You know your stuff"
-      @is_over = true
-      puts "You won in #{guesses.count} guesses!"
-    elsif @tries_of_guesses == 0
-      puts "The word was #{@secret_word}? You couldn't guess it! Better luck next time"
-      @is_over = true
-      puts "You lost in #{guesses.count} guesses!"
+      puts "You guessed the word!! Good job!"
+      @game_status = true
+    elsif @guess_counter >= @secret_word.length
+      puts "You lost!"
+      @game_status = true 
     else
-      @is_over = false
+      @game_status
+      @guess_counter += 1  
     end
   end
 end
 
-
-puts "Welcome to the Guess the word Game!"
-puts "What word would you like your oppnent to guess??"
-secret_word = gets.chomp.downcase
-game = GuessingGame.new(secret_word)
-puts "Your word has this many letters. That is also the amount of tries you get! So guess carefully"
-puts "#{game.hidden_word}"
-while !game.is_over
-  puts "Guess a letter."
-  guess = gets.chomp
-  game.letter_guess(guess)
-  game.word_hider(guess)
-  game.determain_game
-end
-
-
+# game = GuessingGame.new
+# # # puts "guess a letter"
+# # # guess = gets.chomp
+# # puts game.masked_word("hello")
+# # puts game.guess_letter("e")
+#  puts "Hello! Welcome to guessing game. Where someone types in a word and you have to guess what it is."
+#  puts "Enter your secret word!"
+#  secret_word = gets.chomp.downcase
+#  puts game.masked_word(secret_word)
+# while !game.game_status
+#   puts "Now guess a letter"
+#   guess = gets.chomp  
+#   puts game.guess_letter(guess)
+#   game.determine_game
+# end
