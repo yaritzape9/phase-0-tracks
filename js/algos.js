@@ -60,4 +60,54 @@ var person4 = {name: "Lana", age: 28, haircolor:"brown"};
 compare(person3, person4);
 console.log("********")
 compare(person1,person4)
+/*
+ get rand num
+
+loop to get the max num of the array with rand strings
+
+loop to add in various sizez of strings
+
+push and return array
+*/
+console.log("release2----------------------------------")
+function rand_num(min,max){
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+var alpha = "abcdefghijklmnopqrstuvwxz"
+
+function rand(int){
+var begining_int = 0
+var arr = [];	
+
+for (var i = begining_int; i < int; i++){
+	var string = '';
+	var int_one = rand_num(1,11)
+	for (var i_2 = 0; i_2 < int_one; i_2++){
+		var int_two = rand_num(0,14)
+			string += alpha[int_two];		
+		}
+	arr.push(string); 
+	}
+	console.log(arr);
+	return(arr);
+}
+rand(6)
+rand(10)
+rand(5)
+rand(7)
+
+console.log("part2----------------------------------")
+longestString(rand(8));
+longestString(rand(12));
+longestString(rand(2));
+longestString(rand(9));
+longestString(rand(10));
+longestString(rand(6));
+longestString(rand(5));
+longestString(rand(4));
+longestString(rand(3));
+longestString(rand(1));
+
 
