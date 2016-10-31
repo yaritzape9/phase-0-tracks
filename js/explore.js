@@ -10,6 +10,10 @@
 */
 
 function reverseString(string) {
-    
+     var newString = "";
+    for (var i = 0; i < string.length; i++) {
+        newString = string[i] + newString ;
+    }
+    return newString;
  
 }
