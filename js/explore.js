@@ -16,4 +16,12 @@ function reverseString(string) {
     }
     return newString;
 }
- reverseString('This works and its true');
+ var reversemethod = reverseString('This works and its true');
+
+
+if (1 == 1){
+	console.log(reversemethod);
+}
+else {
+	console.log("Not equal");
+}
