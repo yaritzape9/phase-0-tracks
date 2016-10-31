@@ -1,32 +1,32 @@
-var colors = ["Blue-green", "Amythesyst", "Ruby", "Azul"]
-var name = ["Ed Sheeran", "Micheal Buble", "Enrique Inglesias", "Ariana Grande"]
-colors.push("Purple")
-name.push("Batman")
+var colors = ["Orange", "Purple", "Green", "Aqua"]
+var name = ["Justin Bieber", "Taylor Swift", "Stitch", "Mickey"]
+colors.push("Black")
+name.push("Spongebob")
 
-horsey = {}
+horse = {}
 
 for (i = 0; i < name.length; i++) { 
-	horsey[name[i]] = colors[i]
+	horse[name[i]] = colors[i]
 }
 
-console.log(horsey)
+console.log(horse)
 
 console.log("-----------")
 
-function Car(name, horse_power, color){
+function Computer(ram_size, brand, storage_size){
 
-	this.name = name
-	this.horse_power = horse_power;
-	this.color = color;
+	this.ram_size = ram_size;
+	this.brand = brand;
+	this.storage_size = storage_size;
 
-	this.turn_off = function() {console.log("Turning " + name + " off")}
+	this.explode = function() {console.log("This " + ram_size + " " + storage_size + " " + brand + " computer" + " will now explode" )}
 
 }
-var new_car = new Car("BMW", 450, "silver");
-console.log("Our new car is a: " + (new_car.name));
-console.log("It has " + new_car.horse_power + " hp");
-console.log("We chose " + new_car.color + " b/c why not :D")
-new_car.turn_off();
+var new_comp = new Computer("8gb", "Mac", "250ssd");
+console.log("Our " + (new_comp.brand) + " is a very nice computer");
+console.log("It's " + new_comp.storage_size + " can't hold much data");
+console.log("But it's "  + new_comp.ram_size + " can process data and execute pretty quickly")
+new_comp.explode();
 
 
 
