@@ -15,5 +15,5 @@ function reverseString(string) {
         newString = string[i] + newString ;
     }
     return newString;
- 
 }
+ reverseString('This works and its true');
