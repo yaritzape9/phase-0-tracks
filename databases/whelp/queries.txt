@@ -1,0 +1,14 @@
+SELECT * FROM business inner join users ON users.reviews_id = business.reviews_id inner join reviews ON reviews.business_id = business.reviews_id;
+1|Oliver Forest|1|1|Scarlett|Virginia|1|1|4|Elegant restaurant|1|1
+2|Red Larry|2|2|Fernando|Inglesias|2|2|5|Great Service/ Food!|2|2
+3|Cake Factory|3|3|Justin|Beaver|3|3|2|Food's mehh. Wouldn't waste money here|3|3
+4|ITOP|4|4|Taylor|lyyft|4|4|3|Tolerable, good for a quick snack or when on a budget.|4|4
+
+SELECT users.first_name, users.last_name, business.name, reviews.stars, reviews.comment FROM business join users ON users.reviews_id = business.reviews_id join reviews ON reviews.business_id = business.reviews_id;
+Scarlett|Virginia|Oliver Forest|4|Elegant restaurant
+Fernando|Inglesias|Red Larry|5|Great Service/ Food!
+Justin|Beaver|Cake Factory|2|Food's mehh. Wouldn't waste money here
+Taylor|lyyft|ITOP|3|Tolerable, good for a quick snack or when on a budget.
+
+SELECT users.first_name, users.last_name, business.name, reviews.stars, reviews.comment FROM business, reviews, users WHERE business.id = 1 AND users.id = 1 AND reviews.id = 1;
+Scarlett|Virginia|Oliver Forest|4|Elegant restaurant
