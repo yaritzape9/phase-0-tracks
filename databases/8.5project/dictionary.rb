@@ -1,3 +1,6 @@
+=begin
+WELCOM TO THE DICTIONARY APP where you can learn spanish and here you can keep track of the phrases you learn.This way you can go back, read,edit and learn your new spanish phrases. Enjoy your online dictionary that YOU MADE YOURSELF!!
+=end
 require 'sqlite3'
 
 DBNAME = "Dictionary_info.db"
