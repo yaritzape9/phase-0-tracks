@@ -1,0 +1,47 @@
+1.)SELECT * FROM plane_info; 
+	output:
+1|United Airlines|200
+2|Hawaian Airlines|500
+3|Virgin America|900
+
+2.)UPDATE passenger_tickets SET citizen_of_us="true" WHERE name= "Ryan”;
+	output:
+1|Hally|20|Florida|true|1
+2|Cristina|18|Texas|true|3
+3|Ryan|24|Hawaii|true|2
+4|Greta|28|NYC|true|1
+5|Beatrice|19|California|true|3
+
+UPDATE passenger_tickets SET citizen_of_us="false" WHERE name= "Hally";
+	output:
+1|Hally|20|Florida|false|1
+2|Cristina|18|Texas|true|3
+3|Ryan|24|Hawaii|true|2
+4|Greta|28|NYC|true|1
+5|Beatrice|19|California|true|3
+
+3.)SELECT * FROM passenger_tickets, plane_info WHERE passenger_tickets.plane_id = plane_info.id;
+	output:
+1|Hally|20|Florida|true|1|1|United Airlines|200
+2|Cristina|18|Texas|true|3|3|Virgin America|900
+3|Ryan|24|Hawaii|false|2|2|Hawaian Airlines|500
+4|Greta|28|NYC|true|1|1|United Airlines|200
+5|Beatrice|19|California|true|3|3|Virgin America|900
+
+4.)SELECT passenger_tickets.name, plane_info.airline FROM passenger_tickets JOIN plane_info ON passenger_tickets.plane_id = plane_info.id;
+	output:
+Hally|United Airlines
+Cristina|Virgin America
+Ryan|Hawaian Airlines
+Greta|United Airlines
+Beatrice|Virgin America
+
+5.) DELETE FROM passenger_tickets WHERE citizen_of_us
+SELECT * FROM passenger_tickets;
+	output:
+2|Cristina|18|Texas|true|3
+3|Ryan|24|Hawaii|true|2
+4|Greta|28|NYC|true|1
+5|Beatrice|19|California|true|3
+
+s
