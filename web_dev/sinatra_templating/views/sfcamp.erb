@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SF GRADUATING CLASS!!</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<h1>Here is a list of the graduating class</h1>
+	<ul>
+	<% @students.each do |students| %>
+		<li> <%= students['name'] %>, <%= students['age'] %> </li>
+		<% end %>
+	</ul>
+</body>
+</html>
