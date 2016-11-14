@@ -25,3 +25,17 @@ post '/students' do
 end
 
 # add static resources
+get '/students/SF' do
+    @students = db.execute("SELECT * FROM students WHERE campus = 'SF'")
+      erb :sfcamp
+end
+
+#removes students from list now that they graduated
+get '/students/graduated_student' do 
+	erb :graduated_students
+end
+
+post '/graduated_student' do
+	db.execute("DELETE FROM students WHERE name=?", [params['name']])
+	redirect '/'
+end
